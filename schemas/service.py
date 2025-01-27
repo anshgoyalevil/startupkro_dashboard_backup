@@ -1,10 +1,10 @@
-from pathway import PathwayEntity
-from note import NoteEntityList
+from schemas.pathway import PathwayEntity
+from schemas.note import NoteEntityList
 
 
 def ServiceEntity(service) -> dict:
     return {
-        "_id": service.get("_id"),
+        "_id": str(service.get("_id")),
         "timelineDatesIsVisible": service.get("timelineDatesIsVisible"),
         "name": service.get("name"),
         "cost": service.get("cost"),
@@ -21,7 +21,7 @@ def ServiceEntity(service) -> dict:
             "userId": str(service.get("assignedTo").get("userId")),
             "email": service.get("assignedTo").get("email"),
         },
-        "notes": NoteEntityList(service.get("notes"), []),
+        "notes": NoteEntityList(service.get("notes", [])),
     }
 
 

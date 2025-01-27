@@ -1,6 +1,6 @@
 def NoteEntity(note) -> dict:
     return {
-        "_id": note.get("_id"),
+        "_id": str(note.get("_id")),
         "information": note.get("information"),
         "private": bool(note.get("private")),
         "approved": bool(note.get("approved")),
