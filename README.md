@@ -9,3 +9,19 @@ This script doesn't run continuously and requires an HTTP cron client to trigger
 - `pymongo`: for database connection
 - `fastapi[standard]`: for triggering the backup worker remotely
 - `uvicorn`: for running the FastAPI server (optional since `fastapi[standard]` includes `uvicorn`)
+
+### Installation
+
+I love `uv` to manage project and dependencies. So, I recommend using `uv` to install the dependencies.
+
+```bash
+uv sync
+```
+
+To run API server, use the following command:
+
+```bash
+fastapi dev main.py
+```
+
+Made with love by Ansh ❤️
